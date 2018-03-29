@@ -1,7 +1,11 @@
 {
   "name": "lit-courses-react",
   "version": "0.1.0",
-  "homepage": "https://github.com/severjason/lit-courses-react.git",
+  "homepage": "http://litcoursesreact.jswebdev.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/severjason/lit-courses-react.git"
+  },
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "^1.2.2",
