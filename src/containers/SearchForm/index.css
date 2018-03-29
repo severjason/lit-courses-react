@@ -1,0 +1,14 @@
+.ui.app-search-form {
+  margin: 0 auto;
+  max-width: 400px;
+  padding-top: 15px; }
+
+.ui.input.fluid .app-search-input {
+  border-radius: 0.3rem 0 0 0.3rem; }
+  .ui.input.fluid .app-search-input:focus {
+    border-radius: 0.3rem 0 0 0.3rem; }
+
+.ui.app-search-button {
+  border-radius: 0 0.3rem 0.3rem 0;
+  margin: 0;
+  max-width: 50px; }
