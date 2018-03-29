@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Footer } from '../../components';
-import { SearchForm, TrackList } from '../../components';
+import { SearchForm } from '../';
+import { Footer, TrackList } from '../../components';
 import { Helmet } from 'react-helmet';
 
-class Search extends React.Component {
+class SearchPage extends React.Component {
     render() {
         return (
             <div>
@@ -20,4 +20,4 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+export default SearchPage;

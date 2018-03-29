@@ -1,7 +1,9 @@
 import App from './App';
-import Search from './Search';
+import SearchPage from './SearchPage';
+import SearchForm from './SearchForm';
 
 export {
     App,
-    Search,
+    SearchPage,
+    SearchForm,
 };
