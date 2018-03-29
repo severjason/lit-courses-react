@@ -1,0 +1,9 @@
+@import '../../scss/variables';
+
+.test-border {
+  border: 1px solid $app-black-color;
+}
+
+.app-container {
+  min-height: 500px;
+}
