@@ -1,4 +1,7 @@
+@import 'scss/variables';
+
 body {
+  background-color: $app-main-color;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
