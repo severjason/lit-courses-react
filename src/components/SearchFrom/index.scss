@@ -1,5 +1,24 @@
-.app-search-form {
-  margin: 50px auto 0;
-  max-width: 350px;
+// sass-lint:disable force-element-nesting
+@import '../../scss/variables';
+
+.ui.app-search-form {
+  margin: 0 auto;
+  max-width: $search-input-max-width;
+  padding-top: $basic-margin-padding;
 }
 
+.ui.input.fluid {
+  .app-search-input {
+    border-radius: $search-input-radius;
+
+    &:focus {
+      border-radius: $search-input-radius;
+    }
+  }
+}
+
+.ui.app-search-button {
+  border-radius: $search-button-border-radius;
+  margin: 0;
+  max-width: 50px;
+}
