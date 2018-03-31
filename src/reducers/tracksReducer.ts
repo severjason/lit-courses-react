@@ -1,20 +1,21 @@
 import { types } from '../constants/types';
-import { Action } from '../models';
+import { ActionFetchI, TracksListI } from '../interfaces';
 
 const INITIAL_STATE = {
+    received: false,
     tracks: [],
 };
 
-export default function tracksReducer(state: {} = INITIAL_STATE, action: Action) {
+export default function tracksReducer(state: TracksListI = INITIAL_STATE, action: ActionFetchI): TracksListI {
     switch (action.type) {
         case types.TRACKS_FETCHED: {
             return {
-                ...state,
-                tracks: action.payload.results,
+                received: action.received,
+                tracks: state.tracks.concat(action.payload),
             };
         }
         default: {
-            return state;
+            return INITIAL_STATE;
         }
     }
 }

@@ -1,15 +1,13 @@
 import { combineReducers } from 'redux';
 import loadingReducer from './loadingReduser';
 import tracksReducer from './tracksReducer';
+import { StateI } from '../interfaces';
+import errorReducer from './errorReducer';
 
-export interface State {
-    isLoading: boolean;
-    tracks: Array<{}>;
-}
-
-const rootReducer = combineReducers<State>({
+const rootReducer = combineReducers<StateI>({
     isLoading: loadingReducer,
-    tracks: tracksReducer,
+    tracksList: tracksReducer,
+    error: errorReducer,
 });
 
 export default rootReducer;

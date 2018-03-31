@@ -6,14 +6,14 @@ class SearchForm extends React.Component<any, any> {
 
     state = {
         value: '',
-        isLoading: this.props.isLoading
+        isLoading: this.props.tracksLoading
     };
 
     componentDidUpdate() {
-        const { isLoading } = this.props;
+        const getIsLoadingFromStore = this.props.tracksLoading;
 
-        if (this.state.isLoading !== isLoading) {
-            this.setState({isLoading: isLoading});
+        if (this.state.isLoading !== getIsLoadingFromStore) {
+            this.setState({isLoading: getIsLoadingFromStore});
         }
     }
 
@@ -22,35 +22,34 @@ class SearchForm extends React.Component<any, any> {
     private isEmpty = (): boolean => !this.state.value;
 
     private handleClick = (e: any) => {
-        const { actions } = this.props;
         e.preventDefault();
-        actions.fetchTracks(this.state.value);
+        this.props.actions.fetchTracks(this.state.value);
         this.setState({value: ''});
     }
 
     public render(): ReactNode {
         return (
-            <form className="ui form app-search-form">
-                <div className="ui icon input fluid ">
-                    <input
-                        onChange={this.onChange}
-                        className="app-search-input"
-                        type="text"
-                        value={this.state.value}
-                        placeholder="Search tracks by artist..."
-                    />
-                    <button
-                        onClick={this.handleClick}
-                        disabled={this.isEmpty()}
-                        className={
-                            (this.state.isLoading)
-                                ? 'ui button app-search-button loading'
-                                : 'ui button app-search-button'}
-                    >
-                        <i className="search icon"/>
-                    </button>
-                </div>
-            </form>
+                <form className="ui form app-search-form">
+                    <div className="ui icon input fluid ">
+                        <input
+                            onChange={this.onChange}
+                            className="app-search-input"
+                            type="text"
+                            value={this.state.value}
+                            placeholder="Search tracks by artist..."
+                        />
+                        <button
+                            onClick={this.handleClick}
+                            disabled={this.isEmpty()}
+                            className={
+                                (this.state.isLoading)
+                                    ? 'ui button app-search-button loading'
+                                    : 'ui button app-search-button'}
+                        >
+                            <i className="search icon"/>
+                        </button>
+                    </div>
+                </form>
         );
     }
 }

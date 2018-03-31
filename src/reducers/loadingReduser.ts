@@ -1,19 +1,12 @@
 import { types } from '../constants/types';
-import { Action } from '../models';
+import { ActionI } from '../interfaces';
 
-const INITIAL_STATE = {
-    isLoading: false,
-};
-
-export default function loadingReducer(state: {} = INITIAL_STATE, action: Action) {
+export default function loadingReducer(state: boolean = false, action: ActionI) {
     switch (action.type) {
         case types.TRACKS_FETCH_ERROR:
         case types.TRACKS_FETCHED:
         case types.REQUEST_TRACKS: {
-            return {
-                ...state,
-                isLoading: action.isLoading,
-            };
+            return action.isLoading;
         }
         default: {
             return state;
