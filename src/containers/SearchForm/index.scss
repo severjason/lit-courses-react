@@ -2,7 +2,7 @@
 @import '../../scss/variables';
 
 .ui.app-search-form {
-  margin: 0 auto;
+  margin: 0 auto 2 * $basic-margin-padding;
   max-width: $search-input-max-width;
   padding-top: $basic-margin-padding;
 }

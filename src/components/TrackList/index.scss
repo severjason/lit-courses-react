@@ -1,0 +1,7 @@
+// sass-lint:disable force-element-nesting
+@import '../../scss/variables';
+
+.ui.warning.message.app-track-list-info {
+  margin: 0 auto;
+  max-width: $search-input-max-width;
+}
