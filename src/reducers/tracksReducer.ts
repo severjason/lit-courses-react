@@ -18,7 +18,7 @@ export default function tracksReducer(state: TracksListI = INITIAL_STATE, action
             return {
                 ...state,
                 tracks: state.tracks.map((track: TrackI) => {
-                    track.opened = (track.trackId === action.id);
+                    track.opened = (track.trackId === action.id && !track.opened);
                     return track;
                 })
             };
