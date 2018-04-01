@@ -1,3 +1,72 @@
-.app-hide-info {
+// sass-lint:disable force-element-nesting
+@import '../../scss/variables';
+
+.app-additional-info-closed {
   display: none;
+}
+
+.ui.segment.app-track-container {
+  background-color: $app-main-color;
+  border: 0;
+  font-size: 1.2rem;
+  padding: 0;
+  word-break: break-word;
+
+  &.secondary {
+    background-color: $app-secondary-color;
+    padding: 0;
+
+  }
+
+  &:hover {
+    background-color: darken($app-secondary-color, 5%);
+    cursor: pointer;
+  }
+
+  img {
+    border: $img-border;
+  }
+
+  .icon {
+    font-size: 1.7rem;
+  }
+}
+
+.ui.grid {
+  margin: 0;
+}
+
+.app-track-info {
+  min-height: $tracks-min-height;
+}
+
+.app-track-full-name {
+  font-size: 1.7rem;
+}
+
+.app-additional-info {
+  font-size: 1rem;
+}
+
+@media all and (max-width: 768px) {
+
+  .app-track-title {
+    font-size: .9rem;
+  }
+
+  .ui.segment.app-track-container {
+    font-size: .9rem;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+
+  .app-track-full-name {
+    font-size: 1.2rem;
+  }
+
+  .app-additional-info {
+    font-size: .7rem;
+  }
 }

@@ -10,3 +10,7 @@ body {
 .app-loader {
   padding-top: 4 * $basic-margin-padding;
 }
+
+img {
+  max-width: 100%;
+}

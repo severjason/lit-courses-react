@@ -1,2 +1,43 @@
-.app-hide-info {
+.app-additional-info-closed {
   display: none; }
+
+.ui.segment.app-track-container {
+  background-color: #eef7ff;
+  border: 0;
+  font-size: 1.2rem;
+  padding: 0;
+  word-break: break-word; }
+  .ui.segment.app-track-container.secondary {
+    background-color: #ccdff0;
+    padding: 0; }
+  .ui.segment.app-track-container:hover {
+    background-color: #b8d3ea;
+    cursor: pointer; }
+  .ui.segment.app-track-container img {
+    border: 3px solid #01127a; }
+  .ui.segment.app-track-container .icon {
+    font-size: 1.7rem; }
+
+.ui.grid {
+  margin: 0; }
+
+.app-track-info {
+  min-height: 140px; }
+
+.app-track-full-name {
+  font-size: 1.7rem; }
+
+.app-additional-info {
+  font-size: 1rem; }
+
+@media all and (max-width: 768px) {
+  .app-track-title {
+    font-size: .9rem; }
+  .ui.segment.app-track-container {
+    font-size: .9rem; }
+    .ui.segment.app-track-container .icon {
+      font-size: 1.2rem; }
+  .app-track-full-name {
+    font-size: 1.2rem; }
+  .app-additional-info {
+    font-size: .7rem; } }
