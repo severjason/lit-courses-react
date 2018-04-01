@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SearchForm } from '../';
-import { StateI, TracksListI } from '../../interfaces';
+import { ActionsI, StateI, TracksListI } from '../../interfaces';
 import * as actions from '../../actions';
 import { Footer, SearchResponse } from '../../components';
 import { Helmet } from 'react-helmet';
@@ -11,7 +11,7 @@ interface PropsI {
     tracksLoading: boolean;
     tracksList: TracksListI;
     error: Error;
-    actions: any[];
+    actions: ActionsI;
 }
 
 class SearchPage extends React.Component<PropsI, {}> {
@@ -23,8 +23,15 @@ class SearchPage extends React.Component<PropsI, {}> {
                     <title>Tracks search app</title>
                 </Helmet>
                 <div className="ui container app-container">
-                    <SearchForm actions={this.props.actions} tracksLoading={this.props.tracksLoading}/>
-                    <SearchResponse tracksList={this.props.tracksList} error={this.props.error}/>
+                    <SearchForm
+                        actions={this.props.actions}
+                        tracksLoading={this.props.tracksLoading}
+                    />
+                    <SearchResponse
+                        tracksList={this.props.tracksList}
+                        error={this.props.error}
+                        toggleTrack={this.props.actions.toggleTrack}
+                    />
                 </div>
                 <Footer/>
             </div>
