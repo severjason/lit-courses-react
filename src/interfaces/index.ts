@@ -11,7 +11,7 @@ export interface TrackI {
     trackName: string;
     trackCount: number;
     trackPrice: number;
-    trackTimeMillis: Date;
+    trackDuration: string;
 }
 
 export interface TracksListI {
