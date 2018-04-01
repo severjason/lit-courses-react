@@ -28,7 +28,23 @@ const TracksList: React.StatelessComponent<any> = (props: any) => {
         });
 
         return (
-            <div className="ui segments">
+            <div className="ui segments ">
+                <div className="ui grid app-track-title">
+                    <div className="two wide column"/>
+                    <div className="three wide column">
+                        Artist
+                    </div>
+                    <div className="three wide column">
+                        Track
+                    </div>
+                    <div className="three wide column">
+                        Collection
+                    </div>
+                    <div className="three wide column">
+                        Genre
+                    </div>
+                    <div className="two wide column"/>
+                </div>
                 {tracks}
             </div>
         );
