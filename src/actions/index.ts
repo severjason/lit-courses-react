@@ -23,8 +23,13 @@ export const tracksFetchError = (error: Error): ActionI => ({
     error: error,
 });
 
-export function fetchTracks(artist: any) {
-    return (dispatch: Dispatch<any>) => {
+export const toggleTrack = (id: number): ActionI => ({
+    type: types.TOGGLE_TRACK,
+    id: id,
+});
+
+export function fetchTracks(artist: string): Dispatch<ActionI | ActionFetchI> {
+    return (dispatch: Dispatch<ActionI | ActionFetchI>) => {
         dispatch(requestTracks());
         return api.getTracks(artist)
             .then((response: Response) => response.json())

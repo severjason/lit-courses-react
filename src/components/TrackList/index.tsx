@@ -1,5 +1,7 @@
 import * as React from 'react';
 import './index.css';
+import Track from '../Track';
+import { TrackI } from '../../interfaces';
 
 const TrackList: React.StatelessComponent<any> = (props: any) => {
     if (props.tracks.length === 0) {
@@ -14,9 +16,15 @@ const TrackList: React.StatelessComponent<any> = (props: any) => {
             </div>
         );
     } else {
-        return (
-            <div>{props.tracks.toString()}</div>
-        );
+        return props.tracks.map((track: TrackI, index: number) => {
+            return (
+                <Track
+                    key={index}
+                    class={(index % 2 === 0) ? 'secondary' : ''}
+                    track={track}
+                    toggleTrack={props.toggleTrack}
+                />);
+        });
     }
 
 };

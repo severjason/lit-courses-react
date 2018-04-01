@@ -1,5 +1,5 @@
 import { types } from '../constants/types';
-import { ActionFetchI, TracksListI } from '../interfaces';
+import { ActionFetchI, TrackI, TracksListI } from '../interfaces';
 
 const INITIAL_STATE = {
     received: false,
@@ -14,6 +14,16 @@ export default function tracksReducer(state: TracksListI = INITIAL_STATE, action
                 tracks: state.tracks.concat(action.payload),
             };
         }
+        case types.TOGGLE_TRACK: {
+            return {
+                ...state,
+                tracks: state.tracks.map((track: TrackI) => {
+                    track.opened = (track.trackId === action.id);
+                    return track;
+                })
+            };
+        }
+
         default: {
             return INITIAL_STATE;
         }
