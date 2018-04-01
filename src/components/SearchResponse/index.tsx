@@ -10,7 +10,13 @@ const SearchResponse: React.StatelessComponent<any> = (props: any) => {
         );
     } else {
         return (
-            <TrackList tracks={props.tracksList.tracks} />
+            <div className="ui segments">
+                <TrackList
+                    tracks={props.tracksList.tracks}
+                    toggleTrack={props.toggleTrack}
+                />
+            </div>
+
         );
     }
 
