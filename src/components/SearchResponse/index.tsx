@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TrackList, ErrorComponent } from '../../components';
+import { TracksList, ErrorComponent } from '../../components';
 
 const SearchResponse: React.StatelessComponent<any> = (props: any) => {
     if (!props.tracksList.received && props.error === null) {
@@ -10,7 +10,7 @@ const SearchResponse: React.StatelessComponent<any> = (props: any) => {
         );
     } else {
         return (
-            <TrackList
+            <TracksList
                 tracks={props.tracksList.tracks}
                 toggleTrack={props.toggleTrack}
             />

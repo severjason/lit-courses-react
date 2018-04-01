@@ -1,12 +1,12 @@
 import Footer from './Footer';
-import TrackList from './TrackList';
+import TracksList from './TrackList';
 import ErrorComponent from './ErrorComponent';
 import SearchResponse from './SearchResponse';
 import Track from './Track';
 
 export {
     Footer,
-    TrackList,
+    TracksList,
     ErrorComponent,
     SearchResponse,
     Track,

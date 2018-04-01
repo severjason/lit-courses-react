@@ -4,7 +4,7 @@ import Track from '../Track';
 import { TrackI } from '../../interfaces';
 import { ReactNode } from 'react';
 
-const TrackList: React.StatelessComponent<any> = (props: any) => {
+const TracksList: React.StatelessComponent<any> = (props: any) => {
     if (props.tracks.length === 0) {
         return (
             <div className="ui warning message app-track-list-info">
@@ -36,4 +36,4 @@ const TrackList: React.StatelessComponent<any> = (props: any) => {
 
 };
 
-export default TrackList;
+export default TracksList;
