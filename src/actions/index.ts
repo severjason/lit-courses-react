@@ -43,7 +43,7 @@ export function fetchTracks(artist: string): Dispatch<ActionI | ActionFetchI> {
 }
 
 function mapTracks(tracksArray: any[]): TrackI[] {
-    return tracksArray.map((track: TrackI) => {
+    return tracksArray.map((track: any) => {
         return {
             trackId: track.trackId,
             artistName: track.artistName,
@@ -55,7 +55,15 @@ function mapTracks(tracksArray: any[]): TrackI[] {
             trackName: track.trackName,
             trackCount: track.trackCount,
             trackPrice: track.trackPrice,
-            trackTimeMillis: track.trackTimeMillis
+            trackDuration: convertMillis(track.trackTimeMillis)
         };
     });
+}
+
+function convertMillis(time: number): string {
+    function addZero(n: number): string {
+        return (n < 10 ? '0' : '') + n;
+    }
+    const date = new Date(time);
+    return `${addZero(date.getMinutes())}:${addZero(date.getSeconds())}`;
 }
