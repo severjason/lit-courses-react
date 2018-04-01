@@ -2,6 +2,7 @@ import * as React from 'react';
 import './index.css';
 import Track from '../Track';
 import { TrackI } from '../../interfaces';
+import { ReactNode } from 'react';
 
 const TrackList: React.StatelessComponent<any> = (props: any) => {
     if (props.tracks.length === 0) {
@@ -16,7 +17,7 @@ const TrackList: React.StatelessComponent<any> = (props: any) => {
             </div>
         );
     } else {
-        return props.tracks.map((track: TrackI, index: number) => {
+        const tracks: ReactNode = props.tracks.map((track: TrackI, index: number) => {
             return (
                 <Track
                     key={index}
@@ -25,6 +26,12 @@ const TrackList: React.StatelessComponent<any> = (props: any) => {
                     toggleTrack={props.toggleTrack}
                 />);
         });
+
+        return (
+            <div className="ui segments">
+                {tracks}
+            </div>
+        );
     }
 
 };
