@@ -1,5 +1,7 @@
+import { Dispatch } from 'redux';
+
 export interface TrackI {
-    trackId: string;
+    trackId: number;
     artistName: string;
     collectionName: string;
     collectionPrice: number;
@@ -9,7 +11,7 @@ export interface TrackI {
     trackName: string;
     trackCount: number;
     trackPrice: number;
-    trackTimeMillis: number;
+    trackTimeMillis: Date;
 }
 
 export interface TracksListI {
@@ -24,7 +26,8 @@ export interface ApiResponseI {
 
 export interface ActionI {
     type: string;
-    isLoading: boolean;
+    id?: number;
+    isLoading?: boolean;
     error?: Error;
 }
 
@@ -37,4 +40,12 @@ export interface StateI {
     isLoading: boolean;
     tracksList: TracksListI;
     error: Error | null;
+}
+
+export interface ActionsI {
+    requestTracks(): ActionI;
+    tracksFetched(json: TrackI[]): ActionFetchI;
+    tracksFetchError(error: Error): ActionI;
+    toggleTrack(id: number): ActionI;
+    fetchTracks(artist: string): Dispatch<ActionI | ActionFetchI>;
 }
